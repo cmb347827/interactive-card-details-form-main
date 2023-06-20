@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+  
+  <link rel='stylesheet' href='interactive-card-details-form-main.css' type='text/css'>
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  
+</head>
+<body dir="ltr">
+    <main class='container'>
+	   
+	     <article title='Enter credit card details' class='row d-flex flex-column flex-xxl-row'>
+	          <h1 class='d-none'>Credit card details input form page </h1>
+			  <section class='cards col-12 col-xxl-4 d-flex flex-column align-items-center' aria-label='card front and back preview'>
+		          <h2 class='d-none'>credit card details entered preview card images</h2>
+				  <figure  aria-label='card front preview' class='card card-1'>
+			          <img class='ms-4 preview' id='logo' src='images/card-logo.svg' alt='' width="84" height="47">
+			          <img src='images/bg-card-front.png' alt='card preview front' width='447' height='245'>
+                      <!--output is role:status-->
+				      <output class='preview number' form='card-form' id='preview-number' ></output>
+                      <div role='status' class='d-flex justify-content-between'>  
+						 <output class='prename preview name' form='card-form'></output>
+                         <div  role='status' class='preview date d-flex'>
+							<output class='month' form='card-form' >00</output>
+							<span>/</span>
+						    <output class='year' form='card-form' >00</output>
+					     </div>
+					  </div>
+                  </figure>
+			      <figure aria-label='card back preview' class='card card-2'>
+			          <img src='images/bg-card-back.png' alt='card preview back' width='447' height='245'>
+                      <output class='preview cvc' form='card-form' >000</output>
+                  </figure>
+		      </section>
+		      <form autocomplete="on" class='ps-5 form col-12 col-xxl-8' id='card-form' aria-label='form to enter card-holder details' method='post' action='#'>
+                  <label class="text-uppercase left name-left form-label" for='input-name'>Cardholder Name</label>
+                  <input  autocomplete="cc-name" aria-describedby='input-name-error' aria-required="true" type='text' class='form-control-lg col-xxl-6 name' id='input-name' placeholder='e.g. Jane Appleseed' name='input-name'>
+                  <p aria-live="polite" id='input-name-error'></p>
+				  <div aria-live="polite" id="nameclear" class="sr-only"></div>
+				  <label class="text-uppercase left number-left form-label" for='input-number'>Card Number</label>
+                  <input autocomplete="cc-number" aria-describedby='input-number-error' aria-required="true" type='text' maxlength="22" class='form-control-lg col-xxl-6 number' id='input-number' placeholder='e.g. 1234 5678 9123 0000' name='input-number'>
+                  <p aria-live="polite" id='input-number-error'></p>
+				  <div aria-live="polite" id="numberclear" class="sr-only"></div>
+				  <div class='col-9 col-xxl-auto d-flex'>  
+					  <fieldset class='col-6'>
+			               <legend class='text-uppercase exp-legend form-text'>Exp. Date (MM/YY)</legend>
+					       <div class='d-flex'>
+						     <div class='flex-column'>
+				               <label  for='input-month' class='d-none'>enter experiaton month</label>
+                               <input autocomplete="cc-exp-month" aria-describedby='input-month-error'  aria-required="true" type='number'  class='form-control-lg col-12  month' id='input-month' placeholder='MM' name='input-month'>
+                               <p aria-live="polite" id='input-month-error'></p>
+							   <div aria-live="polite" id="monthclear" class="sr-only"></div>
+							 </div>
+							 <div class='flex-column'>
+					           <label for='input-year' class='d-none'>enter the experiation year</label>
+				               <input autocomplete="cc-exp-year" aria-describedby='input-year-error'  aria-required="true" type='number' class='form-control-lg col-12  year' id='input-year' placeholder='YY' name='input-year'>
+                               <p aria-live="polite" id='input-year-error'></p>
+							   <div aria-live="polite" id="yearclear" class="sr-only"></div>
+						     </div>
+					       </div>
+				      </fieldset>
+				      <div class='d-flex col-6 flex-column'>
+                        <label class='text-uppercase cvc-label  form-label' for='input-cvc'>cvc</label>
+                        <input autocomplete="cc-csc" aria-describedby='input-cvc-error' aria-required="true" type='text' class='form-control-lg cvc col-12' id='input-cvc' placeholder='e.g. 123' name='input-cvc'>
+                        <p aria-live="polite" id='input-cvc-error'></p>
+						<div aria-live="polite" id="cvcclear" class="sr-only"></div>
+				      </div>
+				  </div>
+			      <button class='btn btn-primary submit' id='submit' type='button'>Submit</button>
+		      </form>
+			  <article class='d-none col-12 col-xxl-8 success' aria-label='card details were successfully added screen'>
+			      <div class='d-flex flex-column align-items-center justify-content-center'>
+				      <img src='images/icon-complete.svg' alt='' width="80" height="80">
+				      <h2 class='pt-4 text-uppercase'>Thank You!</h2>
+					  <p>We've added your card details</p>
+				  </div>
+				  <button class='btn btn-primary continue' id='button' type='button'>Continue</button>
+			  </article>
+			</article>
+	     
+      </main>
+      <footer>
+	       <div class="attribution mt-5">
+                <span class='me-2'>Challenge by</span><a class='me-2' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> 
+                <span class='me-2'>Coded by</span><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a>
+           </div>
+	  </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous"></script>
+      <script src='interactive-card-details-form-main.js'></script>
+</body>
+</html>

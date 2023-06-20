@@ -1,0 +1,381 @@
+//beautified at https://codebeautify.org/scss-beautifier
+
+@import "custom.scss";
+
+$container__form-xs: 375;
+$container__form-xxl: 1440;
+
+$container__form-xxl-min: 1439;
+$font_size-18: 18px;
+$font_size-12: 12px;
+$font_size-8: 8px;
+
+
+
+$font_weight-normal: 400;
+$font_weight-bold: 700;
+$font_weight-extrabold: 800;
+
+$colors: (
+  White: hsl(0, 0%, 100%),
+  Light grayish violet: hsl(270, 3%, 87%),
+  Dark grayish violet: hsl(279, 6%, 55%),
+  Very dark violet: hsl(278, 68%, 11%),
+);
+$fallback-colors: (
+   White 'Lavender Gray' Eggplant Eminence
+);
+
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+@mixin max-width($grid-size) {
+  max-width: $grid-size * 1px;
+}
+@mixin min-width($grid-size) {
+  min-width: $grid-size * 1px;
+}
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font-family: $font_size-18 'Space Grotesk', sans-serif;
+  &:not(.attribution) {
+    font:$font_weight-normal $font_size-12;
+  }
+  
+  @media screen and (min-width: $container__form-xxl * 1px) {
+  }
+}
+
+main.container {
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  @include margin(100px auto);
+  
+  
+  
+  
+    
+    @include width($container__form-xs);
+	.sr-only {
+       position: absolute;
+       width: 1px;
+       height: 1px;
+       padding: 0;
+       margin: -1px;
+       overflow: hidden;
+       clip: rect(0,0,0,0);
+       border: 0;
+    }
+    .hideElement {
+	   display:none;
+	}
+	.showElement {
+	   display:block;
+	}
+	
+	.addBorder{
+	   outline: none;
+       background: linear-gradient(white, white) padding-box,
+                   linear-gradient(to right,hsl(249, 99%, 64%) , hsl(278, 94%, 30%) ) border-box;
+	   @include border-radius(8px);
+       border: 1px solid transparent;
+	}
+	
+    
+    section:first-of-type{
+	   height: 250px;
+	   position:relative;
+	   
+	   
+	   figure{
+	      height: 0;
+		  border:none;
+	      @include width($container__form-xs);
+		  
+		  .preview {
+	         z-index: 99;
+	         position:relative;
+	         @include font-color(map-get($colors, White), nth($fallback-colors, 3));
+	      }
+		  
+		  &:nth-of-type(1){
+	         img{
+		        padding:0;
+			    margin:0;
+				&:nth-of-type(1){
+				   /*the card logo on the front */
+				   position:relative;
+				   left:5%;
+				   top: 150px;
+				   @media screen and(min-width: $container__form-xxl * 1px){
+				      left: 30%;
+				      top: 50%;
+				   }
+				}
+			    &:nth-of-type(2){
+				   /*the card front img itself */
+		           position:relative;
+			       top: 40px;
+			       right: 25%;
+				   z-index:1;
+				   transform: scale(0.6,0.6);
+				   @media screen and(min-width: $container__form-xxl * 1px){
+				      top: 80px;
+			          left: 20%;
+					  transform: scale(1,1);
+				   }
+		        }
+		     }
+		  }
+		  &:nth-of-type(2){
+		      img{
+			     /*the card back img itself */
+				 padding:0;
+				 margin:0;
+		         position: relative;
+			     top: -40px;
+			     right: 5%;
+				 transform: scale(0.6,0.6);
+				 @media screen and(min-width: $container__form-xxl * 1px){
+				    top: 100px;
+			        left: 60%;
+					transform: scale(1,1);
+				 }
+		      }
+		  
+		  }
+          output.number{
+			 left: 15px;
+			 bottom: 70px;
+	         max-width: 370px;
+	         @media screen and(min-width: $container__form-xxl * 1px) {
+                  left: 100px;
+			      bottom: 15%;
+	              min-width: 400px;
+             }
+	      }
+		  output.name{
+			 left: 15px;
+			 bottom: 60px;
+			 @media screen and(min-width: $container__form-xxl * 1px){
+				 left: 26%;
+				 top: 0;
+			 }
+	      }
+		  /*card date output*/
+		  div.date {
+			 right: 37%;
+			 bottom: 60px;
+			 @media screen and(min-width: $container__form-xxl * 1px){
+				 left: 30%;
+				 bottom:0;
+				 right:0;
+			 }
+		  } 
+		  /*card output cvc */
+		  output.cvc{
+			 bottom: 220px;
+			 left: 78%;
+			 @media screen and(min-width: $container__form-xxl * 1px){
+				 bottom: 35px;
+			    left: 145%;
+			 }
+		  }
+		  @media screen and(max-width: $container__form-xxl-min * 1px){
+		      background-color: hsla(0,0,0,0);
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+		  
+		  }
+		  @media screen and(min-width: $container__form-xxl * 1px){
+		     height: auto;
+			 background-color: hsla(0,0,0,0);
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+		  }
+		  
+	   }
+	   
+	   @media screen and(max-width: $container__form-xxl-min * 1px){
+	        background: url("images/bg-main-mobile.png") no-repeat center center fixed;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+	   }
+	   @media screen and(min-width: $container__form-xxl * 1px){
+	      height: 100vh;
+		  &:before{
+		       content:'';
+			   position:absolute;
+			   height: 100%;
+			   width: 100%;
+		       background: url("images/bg-main-desktop.png") right bottom no-repeat;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+			  transform: scale(-1);
+		  }  
+		  
+	   }
+	}
+    
+
+    form,.success{
+	   position:relative;
+	   display:flex;
+	   flex-flow: column wrap;
+	   
+	   justify-content: center;
+	   align-items:center;
+	   input,.exp-legend,.cvc-label,.left{
+			 position:relative;
+	   }
+	   input{
+	       @include padding(10px);
+	   }
+	   input.month{
+	      width: 65px;
+	      right: 30px;
+		  @media screen and(min-width: $container__form-xxl * 1px){
+		     right:20px;
+		     width: 90px;
+		  }
+	   }
+	   input.year{
+	      width: 65px;
+	      right: 25px;
+		  @media screen and(min-width: $container__form-xxl * 1px){
+		     right:10px;
+			 width: 90px;
+		  }
+	   }
+	   input.cvc{
+	     position:relative;
+	     left: 25px;
+		 
+		 @media screen and(min-width: $container__form-xxl * 1px){
+		     right: 5%;
+			 top: 0;
+			 width: 200px;
+		 }
+	   }
+	   .exp-legend{
+	     width: 140px;
+		 right: 25px;
+		 @media screen and(min-width: $container__form-xxl * 1px){
+		     right: 25px;
+			 width: 130px;
+		 }
+	   }
+	   .cvc-label{
+		  left: 25px;
+		  @media screen and(min-width: $container__form-xxl * 1px){
+		     left: 30px;
+			 top: 5px;
+		  }
+	   }
+	   /*input name field label */
+	   .name-left{
+		  //Bootstrap text-start did not work for these label elements.
+		  right: 45px;
+		  @media screen and(min-width:$container__form-xxl * 1px){
+		      right: 140px;
+		  }
+	   }
+	   /*input credit card number field label */
+	   .number-left{
+	       right: 60px;
+	       @media screen and(min-width: $container__form-xxl * 1px){
+		      right: 165px;
+		   }
+		     
+	   }
+	   .btn-primary{
+	      outline:none;
+		  width: 250px;
+		  height: 50px;
+		  @include bg-color(map-get($colors, Very dark violet), nth($fallback-colors, 4));
+		  @media screen and (min-width: $container__form-xxl * 1px){
+		      width: 465px;
+		  }
+	   }
+	   @media screen and(max-width: $container__form-xxl-min * 1px){
+	      width: calc(100% - 100px);
+          margin: 50px;
+		  min-height: 500px;
+		  input,p{
+		     min-height: 50px;
+		  }
+	   }
+	   @media screen and (min-width: $container__form-xxl * 1px) {
+	      //position the form more to the right in desktop view.
+          left: 50px; 
+		  #input-month-error,#input-year-error{
+		     width: 110px;
+		  }
+		  
+	   }
+	}
+    .success {
+	    & p{
+		   @include font-color(map-get($colors, Dark grayish violet), nth($fallback-colors, 4));
+		}
+	}
+    section:nth-of-type(2){
+	   
+	}
+    
+	
+    @media screen and (min-width: $container__form-xxl * 1px) {
+       @include width($container__form-xxl);
+    }
+  
+  
+  
+}
+
+footer {
+  .attribution {
+    font-size: $font_size-8;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
