@@ -26,19 +26,19 @@
 			          <img class='ms-4 preview' id='logo' src='images/card-logo.svg' alt='' width="84" height="47">
 			          <img src='images/bg-card-front.png' alt='card preview front' width='447' height='245'>
                       <!--output is role:status-->
-				      <output class='preview number' form='card-form' id='preview-number' ></output>
+				      <output label='user entered card preview number' class='preview number' form='card-form' id='preview-number' ></output>
                       <div role='status' class='d-flex justify-content-between'>  
-						 <output class='prename preview name' form='card-form'></output>
+						 <output label='user entered card preview name' class='prename preview name' form='card-form'></output>
                          <div  role='status' class='preview date d-flex'>
-							<output class='month' form='card-form' >00</output>
+							<output label='user entered card preview month' class='month' form='card-form' >00</output>
 							<span>/</span>
-						    <output class='year' form='card-form' >00</output>
+						    <output label='user entered card preview year' class='year' form='card-form' >00</output>
 					     </div>
 					  </div>
                   </figure>
 			      <figure aria-label='card back preview' class='card card-2'>
 			          <img src='images/bg-card-back.png' alt='card preview back' width='447' height='245'>
-                      <output class='preview cvc' form='card-form' >000</output>
+                      <output label='user entered card preview cvc' class='preview cvc' form='card-form' >000</output>
                   </figure>
 		      </section>
 		      <form autocomplete="on" class='ps-5 form col-12 col-xxl-8' id='card-form' aria-label='form to enter card-holder details' method='post' action='#'>
