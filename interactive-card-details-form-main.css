@@ -12956,7 +12956,8 @@ main.container {
         color: white; }
       main.container section:first-of-type figure:nth-of-type(1) img {
         padding: 0;
-        margin: 0; }
+        margin: 0;
+        box-shadow: 1px 10px 30px #888888; }
         main.container section:first-of-type figure:nth-of-type(1) img:nth-of-type(1) {
           /*the card logo on the front */
           position: relative;
@@ -12982,6 +12983,7 @@ main.container {
         /*the card back img itself */
         padding: 0;
         margin: 0;
+        box-shadow: 1px 10px 30px #888888;
         position: relative;
         top: -40px;
         right: 5%;
@@ -13075,30 +13077,30 @@ main.container {
       right: 30px; }
       @media screen and (min-width: 1440px) {
         main.container form input.month, main.container .success input.month {
-          right: 20px;
-          width: 90px; } }
+          right: 18%;
+          width: 80px; } }
     main.container form input.year, main.container .success input.year {
       width: 65px;
       right: 25px; }
       @media screen and (min-width: 1440px) {
         main.container form input.year, main.container .success input.year {
-          right: 10px;
-          width: 90px; } }
+          right: 16%;
+          width: 80px; } }
     main.container form input.cvc, main.container .success input.cvc {
       position: relative;
       left: 25px; }
       @media screen and (min-width: 1440px) {
         main.container form input.cvc, main.container .success input.cvc {
-          right: 5%;
+          left: 22%;
           top: 0;
-          width: 200px; } }
+          width: 180px; } }
     main.container form .exp-legend, main.container .success .exp-legend {
       width: 140px;
       right: 25px; }
       @media screen and (min-width: 1440px) {
         main.container form .exp-legend, main.container .success .exp-legend {
           right: 25px;
-          width: 130px; } }
+          width: 160px; } }
     main.container form .cvc-label, main.container .success .cvc-label {
       left: 25px; }
       @media screen and (min-width: 1440px) {
